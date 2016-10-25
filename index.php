@@ -73,6 +73,7 @@ if(isset($_POST['submit1']))
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -114,7 +115,8 @@ if(isset($_POST['submit1']))
       {        
         var var1=document.getElementById("password");
         var var2=document.getElementById("repassword");
-        var var3=document.getElementById("email");              
+        var var3=document.getElementById("email"); 
+        var var4=document.getElementById("6_letters_code");             
         if(var1.value!=var2.value)
         {
           alert("password and retype password must match");
@@ -125,9 +127,28 @@ if(isset($_POST['submit1']))
           alert("Please check email format");
           return false;        
         }
+
+          //need modification
+          if(var4.localeCompare("abc")!= 0)
+          {
+            //Note: the captcha code is compared case insensitively.
+            //if you want case sensitive match, update the check above to
+            // strcmp()
+             alert("captcha code does not match");
+             return false;
+            
+          }
+
+
       
         return true;
-      }      
+      } 
+
+      function refreshCaptcha()
+        {
+          var img = document.images['captchaimg'];
+          img.src = img.src.substring(0,img.src.lastIndexOf("?"))+"?rand="+Math.random()*1000;
+        }     
 
     </script>
   </head>
@@ -318,6 +339,17 @@ if(isset($_POST['submit1']))
   	   			<input type="password" name="repassword" id="repassword" required>
   	   		</div>
   	   	</div>
+
+        <div class="row">
+          <div class="col-sm-30">
+            <label>captcha</label>
+            <img src="captcha_code_file.php?rand=<?php echo rand(); ?>" id='captchaimg'><br>
+            <label for='message'>Enter the code above here :</label><br>
+            <input id="6_letters_code" name="6_letters_code" type="text" required><br>
+              <small>Can't read the image? click <a href='javascript: refreshCaptcha();'>here</a> to refresh</small>
+          </div>
+        </div>
+
 
   	   	<div class="row">
   	   		<div class="col-sm-30">
