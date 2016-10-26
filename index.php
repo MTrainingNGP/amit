@@ -129,7 +129,7 @@ if(isset($_POST['submit1']))
         }
 
           //need modification
-          if(var4.localeCompare("abc")!= 0)
+          /*if(var4.localeCompare("abc")!= 0)
           {
             //Note: the captcha code is compared case insensitively.
             //if you want case sensitive match, update the check above to
@@ -137,7 +137,7 @@ if(isset($_POST['submit1']))
              alert("captcha code does not match");
              return false;
             
-          }
+          }*/
 
 
       
