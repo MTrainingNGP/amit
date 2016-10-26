@@ -116,7 +116,8 @@ if(isset($_POST['submit1']))
         var var1=document.getElementById("password");
         var var2=document.getElementById("repassword");
         var var3=document.getElementById("email"); 
-        var var4=document.getElementById("6_letters_code");             
+        var var4=document.getElementById("6_letters_code");
+        var var5=document.getElementById("mobile");             
         if(var1.value!=var2.value)
         {
           alert("password and retype password must match");
@@ -126,6 +127,12 @@ if(isset($_POST['submit1']))
         {
           alert("Please check email format");
           return false;        
+        }
+
+        if(isNaN(var5.value))
+        {
+          alert("Mobile Number must be in Number");
+          return false;
         }
 
           //need modification
@@ -169,8 +176,8 @@ if(isset($_POST['submit1']))
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
             <li><a href="login.php">Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -185,172 +192,137 @@ if(isset($_POST['submit1']))
       </div>-->
 
       <form name="register" action="" method="post" onsubmit="return validate1()">
-       <table align="center" border=0>
+      
         <div class="row">
-          <div class="col-sm-30">
-            <label><b>Registration Form</b></label>          
+          <div class="col-sm-2"></div>
+          <div class="col-sm-6">
+            <label><b><h3>Registration Form<h3></b></label>          
           </div>          
         </div>
 
        	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>First Name* :</label>  	   			
-            <input type="text" name="firstname" required>  	   		  
-          </div>  	   		
+  	   		<div class="col-sm-2"><label>First Name* :</label></div>
+          <div class="col-sm-6"><input type="text" name="firstname" required></div>  	   	
   	   	</div>
          
   	   	<div class="row">
-       		<div class="col-sm-30">
-       			<label>Father Name* :</label>
-       			<input type="text" name="fathername" required>
-       		</div>
+       		<div class="col-sm-2"><label>Father Name* :</label></div>
+          <div class="col-sm-6"><input type="text" name="fathername" required></div>   
+       		
        	</div>
           
        	
-       	<div class="row">
-       		<div class="col-sm-30">
-       			<label>Last Name* :</label>
-       			<input type="text" name="lastname" required>
-       		</div>
+       	<div class="row">       		
+       		<div class="col-sm-2"><label>Last Name* :</label></div>
+          <div class="col-sm-6"><input type="text" name="lastname" required></div>
        	</div>
 
-       	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Mother's Name* :</label>
-  	   			<input type="text" name="mothername" required>
+       	<div class="row">  	   		
+  	   			<div class="col-sm-2"><label>Mothers Name* :</label></div>
+            <div class="col-sm-6"><input type="text" name="mothername" required></div>
+  	   	</div>
+
+  	   	 <div class="row">  	   	
+  	   			<div class="col-sm-2"><label>Date Of Birth* :</label></div>
+            <div class="col-sm-6"><input type="text" name="dob" required></div>
+        </div>
+
+  	   	<div class="row">
+  	   			<div class="col-sm-2"><label>Gender* :</label></div>
+            <div class="col-sm-6">
+            <input type="radio" name="gender" value="m" checked>Male
+  	   			<input type="radio" name="gender" value="f">female            
   	   		</div>
   	   	</div>
 
-  	   	 <div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>DOB* :</label>
-  	   			<input type="text" name="dob" required>
-  	   		</div>
-  	   	</div>
-  	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Gender* :</label>
-  	   			<input type="radio" name="gender" value="m" checked>Male
-  	   			<input type="radio" name="gender" value="f">female
-  	   		</div>
-  	   	</div>
-		<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Country* :</label>
-  	   			<input type="text" name="country" required>
-  	   		</div>
+		    <div class="row">
+  	   		<div class="col-sm-2"><label>Country* :</label></div>
+          <div class="col-sm-6"><input type="text" name="country" required></div>
   	   	</div>   
     
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>State* :</label>
-  	   			<input type="text" name="state" required>
-  	   		</div>
+  	   		<div class="col-sm-2"><label>state* :</label></div>
+          <div class="col-sm-6"><input type="text" name="state" required></div>
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>District* :</label>
-  	   			<input type="text" name="district" required>
-  	   		</div>
+  	   		<div class="col-sm-2"><label>District* :</label></div>
+          <div class="col-sm-6"><input type="text" name="district" required></div>
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>City*:</label>
-  	   			<input type="text" name="city" required>
-  	   		</div>
+  	   		<div class="col-sm-2"><label>City* :</label></div>
+          <div class="col-sm-6"><input type="text" name="city" required></div>
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Pincode :</label>
-  	   			<input type="text" name="pincode">
-  	   		</div>
+  	   		<div class="col-sm-2"><label>Pin Code* :</label></div>
+          <div class="col-sm-6"><input type="text" name="pincode" required></div>
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Nationality* :</label>
-  	   			<input type="text" name="nationality" required>
-  	   		</div>
+  	   		<div class="col-sm-2"><label>Nationality* :</label></div>
+          <div class="col-sm-6"><input type="text" name="nationality" required></div>
   	   	</div>
 
-    	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Religion* :</label>
-  	   			<input type="text" name="religion" required>
-  	   		</div>
+    	  <div class="row">  	   		
+  	   			<div class="col-sm-2"><label>Religion* :</label></div>
+            <div class="col-sm-6"><input type="text" name="religion" required></div>  	   
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Phone Number :</label>
-  	   			<input type="text" name="phone" type="number">
-  	   		</div>
+  	   		<div class="col-sm-2"><label>Phone Number :</label></div>
+          <div class="col-sm-6"><input type="text" name="phone" required></div>
   	   	</div>
 
-   		<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Mobile Number* :</label>
-  	   			<input type="text" name="mobile" type="number" required>
-  	   		</div>
+   		  <div class="row">
+  	   		<div class="col-sm-2"><label>Mobile Number* :</label></div>
+          <div class="col-sm-6"><input type="text" name="mobile" id="mobile" required></div>
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Email ID* :</label>
-  	   			<input type="text" name="email" id="email" required>
-  	   		</div>
+  	   		<div class="col-sm-2"><label>Email* :</label></div>
+          <div class="col-sm-6"><input type="text" name="email" required></div>
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Education (Degree)*:</label>
-  	   			<input type="text" name="education" required>
-  	   		</div>
+  	   		<div class="col-sm-2"><label>Education* :</label></div>
+          <div class="col-sm-6"><input type="text" name="education" required></div>
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Year of Passing* :</label>
-  	   			<input type="text" name="year">
-  	   		</div>
+  	   		<div class="col-sm-2"><label>Year* :</label></div>
+          <div class="col-sm-6"><input type="text" name="year" required></div>
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Board/University :</label>
-  	   			<input type="text" name="university">
-  	   		</div>
+  	   		<div class="col-sm-2"><label>University :</label></div>
+          <div class="col-sm-6"><input type="text" name="university" required></div>
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Physical : Yes or No</label>
-  	   			<input type="checkbox" name="physical" id="physical" onclick="togglevalue()">
-  	   			<input type="text" name="comment" id="comment" style="visibility:hidden">
-
-  	   		</div>
+  	   			<div class="col-sm-2"><label>Physical(y/n) :</label></div>
+            <div class="col-sm-6">
+  	   			   <input type="checkbox" name="physical" id="physical" onclick="togglevalue()">
+  	   			   <input type="text" name="comment" id="comment" style="visibility:hidden">
+            </div>   
   	   	</div>  
 
   	   	<div class="row">
   	   		<div class="col-sm-30">
-  	   			<label>Password* :</label>
-  	   			<input type="password" name="password" id="password" required>
+  	   			<div class="col-sm-2"><label>Password* :</label></div>
+            <div class="col-sm-6"><input type="password" name="password" required></div>
   	   		</div>
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<label>Re-enter Password* :</label>
-  	   			<input type="password" name="repassword" id="repassword" required>
-  	   		</div>
+  	   		<div class="col-sm-2"><label>Retype Password* :</label></div>
+          <div class="col-sm-6"><input type="password" name="repassword" required></div>
   	   	</div>
 
         <div class="row">
-          <div class="col-sm-30">
-            <label>captcha</label>
+          <div class="col-sm-2"><label>Captcha :*</label></div>
+          <div class="col-sm-6">          
             <img src="captcha_code_file.php?rand=<?php echo rand(); ?>" id='captchaimg'><br>
             <label for='message'>Enter the code above here :</label><br>
             <input id="6_letters_code" name="6_letters_code" type="text" required><br>
@@ -360,14 +332,16 @@ if(isset($_POST['submit1']))
 
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
-  	   			<input type="checkbox" name="accept" required>
-  	   			<label> “I Accept Terms and Condition"</label>
+           <div class="col-sm-2"></div>
+  	   		  <div class="col-sm-6">
+  	   			 <input type="checkbox" name="accept" required>
+  	   			 <label> I Accept Terms and Condition</label>
   	   		</div>
   	   	</div>
 
   	   	<div class="row">
-  	   		<div class="col-sm-30">
+          <div class="col-sm-2"></div>
+  	   		<div class="col-sm-3">
   	   			<input type="submit" class="btn btn-primary" name="submit1" value="Create Account">
   	   		</div>
   	   	</div>
