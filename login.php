@@ -7,8 +7,7 @@ if (isset($_POST['submit'])) {
   $pwd=$_POST['password'];
   $email=$_POST['email'];
   
-  $query="SELECT id from registration where pasword='$pwd' and email='$email' ";
-  echo $query;
+  $query="SELECT id from registration where pasword='$pwd' and email='$email' ";  
   $row = mysql_fetch_assoc(mysql_query($query));
 
 	if (!empty($row['id'])){   
