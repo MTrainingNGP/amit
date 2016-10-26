@@ -116,8 +116,8 @@ if(isset($_POST['submit1']))
         var var1=document.getElementById("password");
         var var2=document.getElementById("repassword");
         var var3=document.getElementById("email"); 
-        var var4=document.getElementById("6_letters_code");
-        var var5=document.getElementById("mobile");             
+        var var4=document.getElementById("6_letters_code").value;
+        var var5=document.getElementById("mobile1");                    
         if(var1.value!=var2.value)
         {
           alert("password and retype password must match");
@@ -130,13 +130,12 @@ if(isset($_POST['submit1']))
         }
 
         if(isNaN(var5.value))
-        {
+        {          
           alert("Mobile Number must be in Number");
           return false;
         }
-
           //need modification
-          /*if(var4.localeCompare("abc")!= 0)
+          /*if(var4.localeCompare(document.images['captchaimg'].src)!= 0)
           {
             //Note: the captcha code is compared case insensitively.
             //if you want case sensitive match, update the check above to
@@ -277,12 +276,12 @@ if(isset($_POST['submit1']))
 
    		  <div class="row">
   	   		<div class="col-sm-2"><label>Mobile Number* :</label></div>
-          <div class="col-sm-6"><input type="text" name="mobile" id="mobile" required></div>
+          <div class="col-sm-6"><input type="text" name="mobile" id="mobile1" required></div>
   	   	</div>
 
   	   	<div class="row">
   	   		<div class="col-sm-2"><label>Email* :</label></div>
-          <div class="col-sm-6"><input type="text" name="email" required></div>
+          <div class="col-sm-6"><input type="text" name="email" id="email" required></div>
   	   	</div>
 
   	   	<div class="row">
@@ -311,13 +310,13 @@ if(isset($_POST['submit1']))
   	   	<div class="row">
   	   		<div class="col-sm-30">
   	   			<div class="col-sm-2"><label>Password* :</label></div>
-            <div class="col-sm-6"><input type="password" name="password" required></div>
+            <div class="col-sm-6"><input type="password" name="password" id="password" required></div>
   	   		</div>
   	   	</div>
 
   	   	<div class="row">
   	   		<div class="col-sm-2"><label>Retype Password* :</label></div>
-          <div class="col-sm-6"><input type="password" name="repassword" required></div>
+          <div class="col-sm-6"><input type="password" name="repassword" id="repassword" required></div>
   	   	</div>
 
         <div class="row">
