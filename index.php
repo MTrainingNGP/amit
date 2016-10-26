@@ -179,25 +179,33 @@ if(isset($_POST['submit1']))
 
     <div class="container">
 
-      <div class="starter-template">
+      <!--<div class="starter-template">
         <h1>Bootstrap starter template</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
+      </div>-->
 
       <form name="register" action="" method="post" onsubmit="return validate1()">
+       <table align="center" border=0>
+        <div class="row">
+          <div class="col-sm-30">
+            <label><b>Registration Form</b></label>          
+          </div>          
+        </div>
+
        	<div class="row">
   	   		<div class="col-sm-30">
-  	   			<label>First Name* :</label>
-  	   			<input type="text" name="firstname" required>
-  	   		</div>  	   		
+  	   			<label>First Name* :</label>  	   			
+            <input type="text" name="firstname" required>  	   		  
+          </div>  	   		
   	   	</div>
-  	   	
+         
   	   	<div class="row">
        		<div class="col-sm-30">
        			<label>Father Name* :</label>
        			<input type="text" name="fathername" required>
        		</div>
        	</div>
+          
        	
        	<div class="row">
        		<div class="col-sm-30">
@@ -360,7 +368,7 @@ if(isset($_POST['submit1']))
 
   	   	<div class="row">
   	   		<div class="col-sm-30">
-  	   			<input type="submit" name="submit1" value="Create Account">
+  	   			<input type="submit" class="btn btn-primary" name="submit1" value="Create Account">
   	   		</div>
   	   	</div>
   	  </form>
